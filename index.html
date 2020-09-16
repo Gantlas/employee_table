@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Lesson 9</title>
+  </head>
+  <body>
+    <form id="form">
+      <div class="input-wrapper">
+        <input class="form-item" id="name" type="text" placeholder="Name" />
+        <input
+          class="form-item"
+          id="birthday"
+          type="text"
+          placeholder="birthday"
+        />
+        <input class="form-item" id="employmentDate" type="date" />
+        <input class="form-item" id="salary" type="text" placeholder="$" />
+      </div>
+      <button id="addEmployee" class="btn" type="submit">Add employee</button>
+    </form>
+    <div class="table-wrapper">
+      <p id="countEmployee">Number of employees:</p>
+      <p id="salarySum">Sum $:</p>
+      <table id="table">
+        <thead>
+          <tr>
+            <td>N=</td>
+            <td>Name</td>
+            <td>Birthday</td>
+            <td>Employment date</td>
+            <td>Salary</td>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <div class="btn-wrapper">
+        <button id="btnRetire" class="btn">Retire</button>
+        <button id="btnSum" class="btn">Summ salary</button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
+
+<!-- &uarr;
+&darr; -->
