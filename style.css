@@ -55,3 +55,24 @@ td {
   background-color: white;
   cursor: pointer;
 }
+
+td {
+  position: relative;
+  padding: 5px;
+}
+
+.arrow-wrapper {
+  position: absolute;
+  top: 6%;
+  right: 6%;
+}
+
+.arrow {
+  border: none;
+  outline: none;
+  padding: 0;
+  color: red;
+  background-color: transparent;
+  font-size: 1.1rem;
+  cursor: pointer;
+}

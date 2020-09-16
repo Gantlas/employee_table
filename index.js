@@ -4,6 +4,7 @@ const init = () => {
   const form = document.querySelector("#form");
   const retireBtn = document.querySelector("#btnRetire");
   const sumBtn = document.querySelector("#btnSum");
+  const firstRow = document.querySelector(".header-row");
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -22,6 +23,13 @@ const init = () => {
   });
 
   sumBtn.addEventListener("click", () => sumOfSalaries(employers));
+
+  firstRow.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target.matches(".arrow")) {
+      sortFunction(employers, event.target);
+    }
+  });
 };
 
 const addEmployee = (employers) => {
@@ -33,7 +41,7 @@ const addEmployee = (employers) => {
   employers.push({
     checked: false,
     name: name,
-    birthday: birthday,
+    birthday: +birthday,
     employmentDate: new Date(employmentDate),
     salary: +salary,
   });
@@ -107,6 +115,20 @@ const validation = () => {
   return (
     isValidName && isValidBirthday && isValidEmploymentDate && isValidSalary
   );
+};
+
+const sortFunction = (employers, arrowNode) => {
+  const fieldForSort = arrowNode.closest("td").className;
+  const flag = arrowNode.classList[0];
+
+  employers.sort((a, b) => {
+    if (flag === "top") {
+      return b[fieldForSort] - a[fieldForSort];
+    }
+    return a[fieldForSort] - b[fieldForSort];
+  });
+
+  displayTable(employers);
 };
 
 init();
